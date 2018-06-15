@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+   "http://struts.apache.org/dtds/struts-2.3.dtd">
+ 
+<struts>
+
+	<constant name = "struts.devMode" value = "true" />
+	<constant name="struts.custom.i18n.resources" value="global"></constant>
+	<constant name="struts.multipart.maxSize" value="104857600" />
+ 
+   <package name="helloworld"  extends="struts-default">
+   		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<action name ="login">
+         <result type="tiles">login</result>
+         
+         
+      	</action>
+		<action name="hello" class="com.framgia.project1.action.ProductAction" method = "execute">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>				
+				<param name="allowedTypes">
+					image/png,image/gif,image/jpeg,image/pjpeg
+                 </param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success" type="tiles">hellostruts</result>
+			<result name="error" type="tiles">addProduct</result>
+		</action>
+		
+		
+		
+		<action name="product" class="com.framgia.project1.action.LoginAction">
+ 			<result name="success" type="tiles">addProduct</result>
+			<result name="input" type="tiles">login</result>
+			<!-- <result name="error" type="tiles">login</result> -->
+		</action>
+		
+		
+	</package>
+ 
+</struts>
