@@ -11,18 +11,19 @@
       	<sj:submit value="Login"></sj:submit>
 		 
       </s:form> --%>
-      
+      <div class="row" style="padding-left: 20%;margin-top: 20%;background: #80808045;box-shadow: 9px 4px 12px grey">
+      <h1 style="margin-left: 24%;font-weight: bold;font-size: 30px;">Login System</h1>
       <form class="form-horizontal" action="product" role="form" id="myForm" method="post">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Username</label>
     <div class="col-sm-5">
-      <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="Username">
+      <s:textfield name="name" class="form-control" id="inputEmail3" placeholder="Username"></s:textfield>
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
     <div class="col-sm-5">
-      <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password">
+      <s:password name="password" class="form-control" id="inputPassword3" placeholder="Password"></s:password>
     </div>
   </div>
   <div class="form-group">
@@ -40,6 +41,7 @@
     </div>
   </div>
 </form>
+</div>
 </div>
 
 <%-- <script>

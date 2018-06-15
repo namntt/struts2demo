@@ -13,15 +13,6 @@ public class LoginAction extends ActionSupport{
 		this.password = password;
 	}
 	public String execute() throws Exception{
-//		if(getName().equals("admin")&&getPassword().equals("123456")){
-//			
-//			return SUCCESS;
-//		}
-//		else{
-//			
-//			addActionError("Tai khoan hoac mat khau khong dung");
-//			return ERROR;
-//		}
 		return SUCCESS;
 		
 	}
@@ -31,6 +22,7 @@ public class LoginAction extends ActionSupport{
 			
 			addActionError("Tai khoan hoac mat khau khong dung");
 		}
+		
 	}
 	
 	

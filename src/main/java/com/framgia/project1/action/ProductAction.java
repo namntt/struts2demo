@@ -59,7 +59,6 @@ public class ProductAction extends ActionSupport{
 		
         try {
     		File destFile  = new File(uploadFile, productImageFileName);
-
 			FileUtils.copyFile(productImage, destFile);
 			return SUCCESS;
 		} catch (IOException e) {
@@ -70,6 +69,15 @@ public class ProductAction extends ActionSupport{
 		
 		
 	}
+	
+//	public void validate(){
+//		if("".equals(getProductName())){
+//			addFieldError("productName", getText("global.required"));
+//		}
+//		if(getPrice()<0){
+//			addFieldError("price", getText("global.required"));
+//		}
+//	}
 	
 	
 	public String getDescription() {
