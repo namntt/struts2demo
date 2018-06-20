@@ -17,6 +17,10 @@
     <listener>
         <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
     </listener>
+    
+    <listener>
+		<listener-class>com.framgia.project1.listener.HibernateServletContextListener</listener-class>
+	</listener>
    
     <filter>
         <filter-name>struts2</filter-name>
@@ -28,9 +32,7 @@
     <filter-mapping>
         <filter-name>struts2</filter-name>
         <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher> 
-  <dispatcher>FORWARD</dispatcher>
-  <dispatcher>INCLUDE</dispatcher>
+        
     </filter-mapping>
     
    

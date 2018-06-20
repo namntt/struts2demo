@@ -38,8 +38,8 @@
 		
 		<action name="product" class="com.framgia.project1.action.LoginAction">
  			<result name="success" type="tiles">addProduct</result>
-			<result name="input" type="tiles">login</result>
-			<result name="error" type="tiles">login</result>
+			<!-- <result name="input" type="tiles">login</result>
+			<result name="error" type="tiles">login</result> -->
 		</action>
 		
 		

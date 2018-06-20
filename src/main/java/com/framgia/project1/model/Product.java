@@ -1,66 +1,71 @@
 package com.framgia.project1.model;
 
-import java.io.File;
+import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="product")
-public class Product {
-	@Id
-	@Column(name="id")
-	private int productId;
-	@Column(name="name")
-	private String productName;
-	private float price;
-	@Column(name="image")
-	private String productImageFileName;
+public class Product implements Serializable{
+	private Integer id;
+	private String name;
+	private Integer price;
+	private String image;
 	private String description;
 	private String type;
+
 	public Product() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
-	public int getProductId() {
-		return productId;
+
+	public Product(String name, Integer price, String image, String description, String type) {
+		this.name = name;
+		this.price = price;
+		this.image = image;
+		this.description = description;
+		this.type = type;
 	}
-	public void setProductId(int productId) {
-		this.productId = productId;
+
+	public Integer getId() {
+		return this.id;
 	}
-	public String getProductName() {
-		return productName;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
+
+	public String getName() {
+		return this.name;
 	}
-	public float getPrice() {
-		return price;
+
+	public void setName(String name) {
+		this.name = name;
 	}
-	public void setPrice(float price) {
+
+	public Integer getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
-	public String getProductImageFileName() {
-		return productImageFileName;
+
+	public String getImage() {
+		return this.image;
 	}
-	public void setProductImageFileName(String productImageFileName) {
-		this.productImageFileName = productImageFileName;
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getDescription() {
-		return description;
+		return this.description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public String getType() {
-		return type;
+		return this.type;
 	}
+
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	
 }
