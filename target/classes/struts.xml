@@ -14,7 +14,7 @@
    		<result-types>
 			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
-		<action name ="login">
+		<!-- <action name ="login">
          <result type="tiles">login</result>
          
          
@@ -30,17 +30,23 @@
 			<result name="success" type="tiles">hellostruts</result>
 			<result name="error" type="tiles">addProduct</result>
 			<result name="input" type="tiles" >addProduct</result>
-		</action> 
+		</action>  -->
 		
 		<!-- <action name="registeruser" class="com.framgia.project1.action.ProductAction">
 			<result name="success" type="json"></result>
 		</action> -->
 		
-		<action name="product" class="com.framgia.project1.action.LoginAction">
+		<!-- <action name="product" class="com.framgia.project1.action.LoginAction">
  			<result name="success" type="tiles">addProduct</result>
-			<!-- <result name="input" type="tiles">login</result>
-			<result name="error" type="tiles">login</result> -->
-		</action>
+			<result name="input" type="tiles">login</result>
+			<result name="error" type="tiles">login</result>
+		</action> -->
+		
+		<action name ="list">
+         <result type="tiles">listProduct</result>
+         
+         
+      	</action>
 		
 		
 		

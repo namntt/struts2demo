@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+ 	<bean id="productAction" class="com.framgia.project1.action.ProductAction">
+		<property name="productService" ref="productService" />	
+	</bean>
+
+	<bean id="productService" class="com.framgia.project1.dao.ProductDAO" >
+		<property name="productDAO" ref="productDAO" />
+	</bean>
+	
+   	<bean id="productDAO" class="com.framgia.project1.dao.impl.ProductDAOImpl" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+ 
+</beans>

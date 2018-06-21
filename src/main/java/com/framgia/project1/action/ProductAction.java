@@ -2,96 +2,43 @@ package com.framgia.project1.action;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
+import com.framgia.project1.model.Product;
+import com.framgia.project1.service.ProductService;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
-public class ProductAction extends ActionSupport{
-	private int productId;
-	private String productName;
-	private float price;
-	private String productImageFileName;
-	private File productImage;
-	private String productImageContentType;
-	private String description;
-	private String type;
-	private static String uploadFile="/home/namnguyen/Desktop/upload/";
-	public int getProductId() {
-		return productId;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public float getPrice() {
-		return price;
-	}
-	public void setPrice(float price) {
-		this.price = price;
-	}
+public class ProductAction extends ActionSupport implements ModelDriven{
+	Product product=new Product();
+	List<Product> listProduct=new ArrayList<Product>();
 	
-	
-	public String getProductImageFileName() {
-		return productImageFileName;
-	}
-	public void setProductImageFileName(String productImageFileName) {
-		this.productImageFileName = productImageFileName;
-	}
-	public File getProductImage() {
-		return productImage;
-	}
-	public void setProductImage(File productImage) {
-		this.productImage = productImage;
-	}
-	public String getProductImageContentType() {
-		return productImageContentType;
-	}
-	public void setProductImageContentType(String productImageContentType) {
-		this.productImageContentType = productImageContentType;
-	}
-	public String execute() throws Exception{
-		
-        try {
-    		File destFile  = new File(uploadFile, productImageFileName);
-			FileUtils.copyFile(productImage, destFile);
-			return SUCCESS;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-	         return ERROR;
+	ProductService productService;
+	//DI via Spring
+		public void setProductService(ProductService productService) {
+			this.productService = productService;
 		}
-		
-		
+	public Object getModel() {
+		// TODO Auto-generated method stub
+		return product;
+	}
+	public List<Product> getListProduct() {
+		return listProduct;
+	}
+	public void setListProduct(List<Product> listProduct) {
+		this.listProduct = listProduct;
 	}
 	
-//	public void validate(){
-//		if("".equals(getProductName())){
-//			addFieldError("productName", getText("global.required"));
-//		}
-//		if(getPrice()<0){
-//			addFieldError("price", getText("global.required"));
-//		}
-//	}
+	public String listProduct() throws Exception{
+		listProduct=productService.findAllProduct();
+		return SUCCESS;
+	}
 	
 	
-	public String getDescription() {
-		return description;
-	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public String getType() {
-		return type;
-	}
-	public void setType(String type) {
-		this.type = type;
-	}
+	
 	
 	
 }

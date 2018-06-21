@@ -29,6 +29,11 @@
       <put-attribute name="body" value="/pages/addProduct.jsp"/>      
   </definition>
   
+   <definition name="listProduct" extends="baseLayout">
+      
+      <put-attribute name="body" value="/pages/listProduct.jsp"/>      
+  </definition>
+  
   <!-- <definition name="friends" extends="baseLayout">
       <put-attribute name="title"  value="Friends"/>
       <put-attribute name="body"   value="/friends.jsp"/>      

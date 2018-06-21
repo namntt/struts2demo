@@ -17,11 +17,6 @@
     <listener>
         <listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
     </listener>
-    
-    <listener>
-		<listener-class>com.framgia.project1.listener.HibernateServletContextListener</listener-class>
-	</listener>
-   
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>
@@ -35,9 +30,14 @@
         
     </filter-mapping>
     
-   
- 
-    
-     
- 
+   <context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>/WEB-INF/classes/SpringBeans.xml</param-value>
+  </context-param>
+  
+  <listener>
+    <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+  </listener>
 </web-app>
